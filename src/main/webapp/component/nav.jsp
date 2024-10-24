@@ -1,3 +1,6 @@
+<div class="container-fluid"
+           style="height:10px;background-color: #303f9f"></div>>
+
 <div class="container-fluid p-3">
 	<div class="row">
 		<div class="col-md-3 text-success">
@@ -41,8 +44,8 @@
 			
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
-			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-cog "></i>Setting</button>
-      <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-phone-square-alt "></i>Contact Us</button>
+			<button class="btn btn-light my-2  " type="submit"><i class="fas fa-cog  mr-2 "></i>Setting</button>
+      <button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fas fa-phone-square-alt  mr-2"></i>Contact Us</button>
     </form>
 	</div>
 </nav>
