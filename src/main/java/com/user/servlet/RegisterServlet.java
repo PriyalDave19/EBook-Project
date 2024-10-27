@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
@@ -34,40 +35,35 @@ public class RegisterServlet extends HttpServlet {
 			
 			//System.out.println(name+" "+email+" "+phno+" "+password+" "+check);
 			
-			User us =new User();
+			User us = new User();
 			us.setName(name);
 			us.setEmail(email);
 			us.setPhno(phno);
 			us.setPassword(password);
 			
-			if(check!=null) 
-			{
+			HttpSession session = req.getSession();
+			
+			if(check!=null) {
 				UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
 				boolean f = dao.userRegister(us);
 				
 				if(f) 
 				{
-					System.out.println("User Register Success..");
+					//System.out.println("User Register Success..");
+					
+					session.setAttribute("succMsg", "Registration Successfully");
+					resp.sendRedirect("register.jsp");
+					
 				}else {
-					System.out.println("Something wrong on server..");
-
-				}	
+					//System.out.println("Something wrong on server..");
+					session.setAttribute("failedMsg", "Something wrong on server..");
+					resp.sendRedirect("register.jsp");
+				}
 			}else {
-				System.out.println("Please Check Agree & Terms Condition");
-
-			}
-			
-			
-			UserDAOImpl dao = new UserDAOImpl(DBConnect.getConn());
-			boolean f = dao.userRegister(us);
-			
-			if(f) 
-			{
-				System.out.println("User Register Success..");
-			}else {
-				System.out.println("Something wrong on server..");
-
-			}
+				//System.out.println("Please Check Agree & Terms Condition");
+				session.setAttribute("failedMsg", "Please Check Agree & Terms Condition");
+				resp.sendRedirect("register.jsp");
+			}	
 			
 		}catch(Exception e) {
 			e.printStackTrace();
