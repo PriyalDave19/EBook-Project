@@ -33,13 +33,13 @@ public class LoginServlet extends HttpServlet{
 			String email=req.getParameter("email");
 			String password=req.getParameter("password");
 			
-			System.out.println(email+" "+password);
+			//System.out.println(email+" "+password);
 			
 			if("admin@gmail.com".equals(email) && "admin".equals(password))
 			{
 				User us=new User();
 				session.setAttribute("userobj",us);
-				resp.sendRedirect("admin/home1.jsp");
+				resp.sendRedirect("admin/home.jsp");
 			}else {
 				
 				User us=dao.login(email, password);
