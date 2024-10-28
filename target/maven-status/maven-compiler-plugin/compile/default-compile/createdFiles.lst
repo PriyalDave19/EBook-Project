@@ -1,5 +1,10 @@
 com\DAO\UserDAOImpl.class
+com\entity\BookDtls.class
+com\admin\servlet\BooksAdd.class
+com\DAO\BookDAOImpl.class
 com\DB\DBConnect.class
 com\DAO\UserDAO.class
 com\entity\User.class
 com\user\servlet\RegisterServlet.class
+com\DAO\BookDAO.class
+com\user\servlet\LoginServlet.class
