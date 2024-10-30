@@ -37,19 +37,19 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="#">Home
+			<li class="nav-item active"><a class="nav-link" href="index1.jsp">Home
 					<span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item active"><a class="nav-link" href="#"><i
+			<li class="nav-item active"><a class="nav-link" href="all_recent_book.jsp"><i
 					class="fas fa-book-open" style="line-height: 1; color: white;"></i>Recent
 					Book</a></li>
 
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="#"><i class="fas fa-book-open"
+				href="all_new_book.jsp"><i class="fas fa-book-open"
 					style="line-height: 1; color: white;"></i>New Book</a></li>
 
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="#"><i class="fas fa-book-open"
+				href="all_old_book.jsp"><i class="fas fa-book-open"
 					style="line-height: 1; color: white;"></i>Old Book</a></li>
 
 		</ul>

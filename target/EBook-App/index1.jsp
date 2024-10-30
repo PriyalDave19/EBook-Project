@@ -23,7 +23,7 @@
 </style>
 </head>
 
-<body style="background-color: #f7f7f7";>
+<body style="background-color: #f7f7f7;">
 	<%@include file="component/nav.jsp"%>
 	<div class="container-fluid back-img">
 		<h2 class="text-center text-danger">EBook Management System</h2>

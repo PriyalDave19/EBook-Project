@@ -1,5 +1,13 @@
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\admin\servlet\BooksAdd.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\admin\servlet\BooksDeleteServlet.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\admin\servlet\EditBooksServlet.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\DAO\BookDAO.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\DAO\BookDAOImpl.java
 C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\DAO\UserDAO.java
 C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\DAO\UserDAOImpl.java
 C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\DB\DBConnect.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\entity\BookDtls.java
 C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\entity\User.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\user\servlet\LoginServlet.java
+C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\user\servlet\LogoutServlet.java
 C:\Users\parid\OneDrive\Documents\EclipseProjects\EBook-App\src\main\java\com\user\servlet\RegisterServlet.java
