@@ -81,11 +81,7 @@
 				<%
 				} else {
 				%>
-				<div class="text-center p-3">
-					<a href="" class="btn btn-primary"><i class="fas fa-cart-plus"></i>Add
-						Cart</a> <a href="" class="btn btn-danger"><i
-						class="fas fa-rupee-sign"></i>200</a>
-				</div>
+				
 
 				<%
 				}

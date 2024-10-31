@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+
+
 <div class="container-fluid"
 	style="height: 10px; background-color: #303f9f"></div>
 
@@ -16,10 +20,27 @@
 			</form>
 		</div>
 
-		<div class="col-md-3">
-			<a href="login.jsp" class="btn btn-success"><i class="fas fa-sign-in-alt"></i>Login</a> 
-			<a href="register.jsp"class="btn btn-primary text-white"><i class="fas fa-user-plus"></i>Register</a>
-		</div>
+
+		<c:if test="${not empty userobj}">
+			<div class="col-md-3">
+
+				<a href="checkout.jsp"><i class="fas fa-cart-plus fa-2x"></i></a> <a
+					href="login.jsp" class="btn btn-success"><i
+					class="fas fa-user-plus"></i> ${userobj.name}</a> 
+					
+					<a href="logout"class="btn btn-primary text-white"><i
+					class="fas fa-sign-in-alt"></i> Logout</a>
+			</div>
+		</c:if>
+
+
+		<c:if test="${empty userobj}">
+			<div class="col-md-3">
+				<a href="login.jsp" class="btn btn-success"><i
+					class="fas fa-sign-in-alt"></i>Login</a> <a href="register.jsp"
+					class="btn btn-primary text-white"><i class="fas fa-user-plus"></i>Register</a>
+			</div>
+		</c:if>
 
 	</div>
 </div>
@@ -37,12 +58,12 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="index1.jsp">Home
-					<span class="sr-only">(current)</span>
+			<li class="nav-item active"><a class="nav-link"
+				href="index1.jsp">Home <span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item active"><a class="nav-link" href="all_recent_book.jsp"><i
-					class="fas fa-book-open" style="line-height: 1; color: white;"></i>Recent
-					Book</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="all_recent_book.jsp"><i class="fas fa-book-open"
+					style="line-height: 1; color: white;"></i>Recent Book</a></li>
 
 			<li class="nav-item active"><a class="nav-link disabled"
 				href="all_new_book.jsp"><i class="fas fa-book-open"
@@ -54,9 +75,9 @@
 
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
-			<button class="btn btn-light my-2  " type="submit">
+			<a href="setting.jsp" class="btn btn-light my-2  " type="submit">
 				<i class="fas fa-cog  mr-2 "></i>Setting
-			</button>
+			</a>
 			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
 				<i class="fas fa-phone-square-alt  mr-2"></i>Contact Us
 			</button>
