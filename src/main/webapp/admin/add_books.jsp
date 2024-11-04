@@ -23,6 +23,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h4 class="text-center">Add Books</h4>
+						
 						<c:if test="${not empty succMsg}">
 							<p class="text-center text-success">${succMsg}</p>
 							<c:remove var="succMsg" scope="session" />

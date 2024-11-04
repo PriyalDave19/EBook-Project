@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -9,6 +11,12 @@
 <%@include file="component/eCss.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
+	
+	
+	<c:if test="${ empty userobj}">
+		<c:redirect url="login.jsp" />
+	</c:if>
+
 	<%@include file="component/nav.jsp"%>
 
 	<div class="container">
@@ -17,7 +25,24 @@
 				<div class="card">
 					<div class="card-body">
 						<h5 class="text-center text-primary p-3">Sell Old Book</h5>
-						<form action="" method="post" enctype="multipart/form-data">
+						
+						<c:if test="${not empty succMsg}">
+							<p class="text-center text-success">${succMsg}</p>
+							<c:remove var="succMsg" scope="session" />
+						</c:if>
+
+						<c:if test="${not empty failedMsg}">
+							<p class="text-center text-danger">${failedMsg}</p>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+						
+						
+						<form action="add_old_book" method="post"
+							enctype="multipart/form-data">
+
+
+
+							<input type="hidden" value="${userobj.email}" name="user">
 
 							<div class="form-group">
 								<label for="exampleInputEmail1">Book Name</label> <input

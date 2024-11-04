@@ -21,12 +21,14 @@
 	<c:if test="${empty userobj}">
 		<c:redirect url="login.jsp" />
 	</c:if>
+
 	<c:if test="${not empty succMsg}">
 		<div class="alert alert-success" role="alert">${succMsg}</div>
 		<c:remove var="succMsg" scope="session" />
 	</c:if>
+	
 	<c:if test="${not empty failedMsg}">
-		<div class="alert alert-danger" role="alert">${failedMsg}</div>
+		<div class="alert alert-danger text-center" role="alert">${failedMsg}</div>
 		<c:remove var="failedMsg" scope="session" />
 	</c:if>
 
@@ -59,7 +61,7 @@
 									<td><%=c.getAuthor()%></td>
 									<td><%=c.getPrice()%></td>
 									<td><a
-										href="remove_book?bid=<%=c.getBid()%>&uid=<%=c.getUserId()%>"
+										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>&&cid=<%=c.getCid()%>"
 										class="btn btn-sm btn-danger">Remove</a></td>
 								</tr>
 								<%
@@ -81,52 +83,56 @@
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center text-success">Your Details for Order</h3>
-						<form>
+						<form action="order" method="post">
+							<input type="hidden" value="${userobj.id}" name="id">
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="name">Name</label> <input type="text"
-										class="form-control" id="name" value="<%=u.getName()%>" readonly="readonly">
+										name="username" class="form-control" id="name"
+										value="${userobj.name}" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="email">Email</label> <input type="email"
-										class="form-control" id="email" value="<%=u.getEmail()%>" readonly="readonly">
+										name="email" class="form-control" id="email"
+										value="${userobj.email}"required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="phone">Phone Number</label> <input type="number"
-										class="form-control" id="phone" value="<%=u.getPhno()%>">
+										name="phno" class="form-control" id="phone"
+										value="${userobj.phno}"required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="address">Address</label> <input type="text"
-										class="form-control" id="address">
+										name="address" class="form-control" id="address"required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="landmark">Landmark</label> <input type="text"
-										class="form-control" id="landmark">
+										name="landmark" class="form-control" id="landmark"required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="city">City</label> <input type="text"
-										class="form-control" id="city">
+									<label for="city">City</label> <input type="text" name="city"
+										class="form-control" id="city"required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="state">State</label> <input type="text"
-										class="form-control" id="state">
+										name="state" class="form-control" id="state"required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="pin">Pin Code</label> <input type="text"
-										class="form-control" id="pin">
+										name="pincode" class="form-control" id="pin"required>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="paymentMode">Payment Mode</label> <select
-									class="form-control" id="paymentMode">
-									<option>--Select--</option>
-									<option>Cash On Delivery</option>
+									class="form-control" id="paymentMode" name="payment">
+									<option value="noselect">--Select--</option>
+									<option value="COD">Cash On Delivery</option>
 								</select>
 							</div>
 							<div class="text-center">

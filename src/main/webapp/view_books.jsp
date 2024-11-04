@@ -73,22 +73,23 @@
 				if ("Old".equals(b.getBookCategory())) {
 				%>
 				<div class="text-center p-3">
-					<a href="index1.jsp" class="btn btn-success"><i class="fas fa-cart-plus"></i>
-						Continue Shopping</a> <a href="" class="btn btn-danger"><i
-						class="fas fa-rupee-sign"></i>200</a>
+					<a href="index1.jsp" class="btn btn-success"><i
+						class="fas fa-cart-plus"></i> Continue Shopping</a> <a href=""
+						class="btn btn-danger"><i class="fas fa-rupee-sign"></i>200</a>
 				</div>
 
 				<%
 				} else {
 				%>
-				
-
+				<div class="text-center p-3 ">
+					<a href="" class="btn btn-primary btn-sm ml-1"><i
+						class="fas fa-cart-plus"></i>Add Cart</a> <a href=""
+						class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%> <i
+						class="fas fa-rupee-sign"></i></a>
+				</div>
 				<%
 				}
 				%>
-
-
-
 			</div>
 
 		</div>

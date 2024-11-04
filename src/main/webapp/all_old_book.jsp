@@ -28,6 +28,7 @@
 			List<BookDtls> list3 = dao3.getAllOldBooks();
 			for (BookDtls b : list3) {
 			%>
+			
 			<div class="col-md-3">
 				<div class="card crd-ho mt-2">
 					<div class="card-body text-center">
@@ -35,12 +36,14 @@
 							style="width: 110px; height: 150px" class="img-thumbnail">
 						<p><%=b.getBookName()%></p>
 						<p><%=b.getAuthor()%></p>
-						<p><%=b.getBookCategory()%></p>
+						<p>
+							Categories:<%=b.getBookCategory()%></p>
 
 						<div class="row">
-							<a href="" class="btn btn-success btn-sm ml-5">View Details</a> <a
-								href="" class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%>
-								<i class="fas fa-rupee-sign"></i></a>
+							<a href="view_books.jsp?bid=<%=b.getBookId()%>"
+								class="btn btn-success btn-sm ml-5">View Details</a> <a href=""
+								class="btn btn-danger btn-sm ml-1"><%=b.getPrice()%> <i
+								class="fas fa-rupee-sign"></i></a>
 						</div>
 					</div>
 				</div>
